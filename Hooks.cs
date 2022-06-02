@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using HarmonyLib;
+using static KKS_MhamotoVR.MhamotoVR;
 
 namespace KKS_MhamotoVR
 {
@@ -14,11 +15,11 @@ namespace KKS_MhamotoVR
 		[HarmonyPatch(typeof(VRHScene), "MapSameObjectDisable")]
 		public static void VRHSceneLoadPostfix(VRHScene __instance)
 		{
-			if (setParentObj != null)
-				UnityEngine.Object.Destroy(setParentObj);
+			if (MhamotoObj != null)
+				UnityEngine.Object.Destroy(MhamotoObj);
 
-			setParentObj = __instance.gameObject.AddComponent<SetParent>();
-			setParentObj.Init(__instance.sprites[0], (List<MotionIK>)Traverse.Create(__instance).Field("lstMotionIK").GetValue());
+			MhamotoObj = __instance.gameObject.AddComponent<Mhamoto>();
+			MhamotoObj.Init(__instance.sprite, (List<MotionIK>)Traverse.Create(__instance).Field("lstMotionIK").GetValue());
 		}
 	}
 }

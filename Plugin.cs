@@ -3,11 +3,12 @@
 namespace KKS_MhamotoVR
 {
     [BepInPlugin(PLUGIN_GUID, PLUGIN_NAME, PLUGIN_VERSION)]
-    public class Plugin : BaseUnityPlugin
+    public class MhamotoVR : BaseUnityPlugin
     {
         public const string PLUGIN_GUID = "CUM.KKS_MhamotoVR";
         public const string PLUGIN_VERSION = "0.1.0";
         public const string PLUGIN_NAME = "MhamotoVR";
+        internal static Mhamoto MhamotoObj;
         private void Awake()
         {
             // Plugin startup logic
