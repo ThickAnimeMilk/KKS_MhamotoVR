@@ -1,0 +1,11 @@
+F:\Koikatsu Sunhsine Vive tracker mod\KKS_MhamotoVR\KKS_MhamotoVR\bin\Debug\netstandard2.0\KKS_MhamotoVR.deps.json
+F:\Koikatsu Sunhsine Vive tracker mod\KKS_MhamotoVR\KKS_MhamotoVR\bin\Debug\netstandard2.0\KKS_MhamotoVR.dll
+F:\Koikatsu Sunhsine Vive tracker mod\KKS_MhamotoVR\KKS_MhamotoVR\bin\Debug\netstandard2.0\KKS_MhamotoVR.pdb
+F:\Koikatsu Sunhsine Vive tracker mod\KKS_MhamotoVR\KKS_MhamotoVR\obj\Debug\netstandard2.0\KKS_MhamotoVR.csproj.AssemblyReference.cache
+F:\Koikatsu Sunhsine Vive tracker mod\KKS_MhamotoVR\KKS_MhamotoVR\obj\Debug\netstandard2.0\PluginInfo.cs
+F:\Koikatsu Sunhsine Vive tracker mod\KKS_MhamotoVR\KKS_MhamotoVR\obj\Debug\netstandard2.0\KKS_MhamotoVR.GeneratedMSBuildEditorConfig.editorconfig
+F:\Koikatsu Sunhsine Vive tracker mod\KKS_MhamotoVR\KKS_MhamotoVR\obj\Debug\netstandard2.0\KKS_MhamotoVR.AssemblyInfoInputs.cache
+F:\Koikatsu Sunhsine Vive tracker mod\KKS_MhamotoVR\KKS_MhamotoVR\obj\Debug\netstandard2.0\KKS_MhamotoVR.AssemblyInfo.cs
+F:\Koikatsu Sunhsine Vive tracker mod\KKS_MhamotoVR\KKS_MhamotoVR\obj\Debug\netstandard2.0\KKS_MhamotoVR.csproj.CoreCompileInputs.cache
+F:\Koikatsu Sunhsine Vive tracker mod\KKS_MhamotoVR\KKS_MhamotoVR\obj\Debug\netstandard2.0\KKS_MhamotoVR.dll
+F:\Koikatsu Sunhsine Vive tracker mod\KKS_MhamotoVR\KKS_MhamotoVR\obj\Debug\netstandard2.0\KKS_MhamotoVR.pdb
