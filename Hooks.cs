@@ -19,7 +19,7 @@ namespace KKS_MhamotoVR
 				UnityEngine.Object.Destroy(MhamotoObj);
 
 			MhamotoObj = __instance.gameObject.AddComponent<Mhamoto>();
-			MhamotoObj.Init(__instance.sprite, (List<MotionIK>)Traverse.Create(__instance).Field("lstMotionIK").GetValue());
+			MhamotoObj.Init(__instance, (List<MotionIK>)Traverse.Create(__instance).Field("lstMotionIK").GetValue());
 		}
 	}
 }
