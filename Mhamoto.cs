@@ -23,6 +23,8 @@ namespace KKS_MhamotoVR
             controllers[Side.Left] = hscene.flags.managerVR.objMove.transform.Find("Controller (left)").gameObject;
             controllers[Side.Right] = hscene.flags.managerVR.objMove.transform.Find("Controller (right)").gameObject;
 
+            TrackerSphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+
             // Setting up the tracker
             MyTracker.transform.parent = cameraEye.transform.parent;
             SteamVR_TrackedObject MyTrackedObject = MyTracker.AddComponent<SteamVR_TrackedObject>() as SteamVR_TrackedObject;
@@ -34,29 +36,28 @@ namespace KKS_MhamotoVR
             //VRViveController MyTrackerViveDummy = MyTracker.AddComponent<VRViveController>() as VRViveController;
             //MyTrackerViveDummy.
 
-            //Attach cube to tracker
-            TrackerCube.transform.parent = MyTracker.transform;
-            TrackerCube.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-
-            TrackersManager.objects.SetValue(MyTracker, 2);
+            //Attach Sphere to tracker
+            TrackerSphere.transform.position = MyTracker.transform.position;
+            //TrackerSphere.transform.parent = MyTracker.transform;
+            TrackerSphere.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
 
 
         }
 
         public void LateUpdate()
         {
+            TrackerSphere.transform.position = MyTracker.transform.position;
+
             if (cameraEye)
             {
                 var myLogSource = BepInEx.Logging.Logger.CreateLogSource("MyLogSource");
 
-                myLogSource.LogInfo("CameraEye pos: ");
-                myLogSource.LogInfo(cameraEye.transform.position);
-                myLogSource.LogInfo("Left Controller pos: ");
-                myLogSource.LogInfo(controllers[Side.Left].transform.position);
                 myLogSource.LogInfo("Right Controller pos: ");
                 myLogSource.LogInfo(controllers[Side.Right].transform.position);
                 myLogSource.LogInfo("Tracker pos: ");
                 myLogSource.LogInfo(MyTracker.transform.position);
+                myLogSource.LogInfo("TrackerSphere pos: ");
+                myLogSource.LogInfo(TrackerSphere.transform.position);
 
                 BepInEx.Logging.Logger.Sources.Remove(myLogSource);
             }
@@ -109,7 +110,7 @@ namespace KKS_MhamotoVR
             Right
         }
         internal GameObject MyTracker = new GameObject("MyTracker");
-        internal GameObject TrackerCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        internal GameObject TrackerSphere;
         internal SteamVR_ControllerManager TrackersManager;
 
     }
