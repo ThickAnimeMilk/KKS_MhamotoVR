@@ -23,7 +23,7 @@ namespace KKS_MhamotoVR
             controllers[Side.Left] = hscene.flags.managerVR.objMove.transform.Find("Controller (left)").gameObject;
             controllers[Side.Right] = hscene.flags.managerVR.objMove.transform.Find("Controller (right)").gameObject;
 
-            TrackerSphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            TrackerCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
 
             // Setting up the tracker
             MyTracker.transform.parent = cameraEye.transform.parent;
@@ -37,16 +37,18 @@ namespace KKS_MhamotoVR
             //MyTrackerViveDummy.
 
             //Attach Sphere to tracker
-            TrackerSphere.transform.position = MyTracker.transform.position;
+            TrackerCube.transform.position = MyTracker.transform.position;
             //TrackerSphere.transform.parent = MyTracker.transform;
-            TrackerSphere.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            TrackerCube.transform.localScale = new Vector3(0.07f, 0.07f, 0.07f);
 
 
         }
 
         public void LateUpdate()
         {
-            TrackerSphere.transform.position = MyTracker.transform.position;
+            TrackerCube.transform.position = MyTracker.transform.position;
+            TrackerCube.transform.rotation = MyTracker.transform.rotation;
+            TrackerCube.transform.localScale = new Vector3(0.07f, 0.07f, 0.07f);
 
             if (cameraEye)
             {
@@ -57,7 +59,7 @@ namespace KKS_MhamotoVR
                 myLogSource.LogInfo("Tracker pos: ");
                 myLogSource.LogInfo(MyTracker.transform.position);
                 myLogSource.LogInfo("TrackerSphere pos: ");
-                myLogSource.LogInfo(TrackerSphere.transform.position);
+                myLogSource.LogInfo(TrackerCube.transform.position);
 
                 BepInEx.Logging.Logger.Sources.Remove(myLogSource);
             }
@@ -110,7 +112,7 @@ namespace KKS_MhamotoVR
             Right
         }
         internal GameObject MyTracker = new GameObject("MyTracker");
-        internal GameObject TrackerSphere;
+        internal GameObject TrackerCube;
         internal SteamVR_ControllerManager TrackersManager;
 
     }
